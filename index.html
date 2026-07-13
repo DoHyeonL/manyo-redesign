@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마녀공장 | ma:nyo (퍼블리셔 포트폴리오)</title>
+    <meta
+      name="description"
+      content="마녀공장(MANYO FACTORY) 공식 쇼핑몰 UI를 참고하여 제작한 프론트엔드 퍼블리싱 연습용 포트폴리오입니다. 반응형 레이아웃, 스와이퍼 캐러셀, 필터링, 스크롤 인터랙션을 직접 구현했습니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="마녀공장 | ma:nyo (퍼블리셔 포트폴리오)" />
+    <meta
+      property="og:description"
+      content="마녀공장 공식 쇼핑몰 UI를 참고한 프론트엔드 퍼블리싱 연습용 포트폴리오입니다."
+    />
+    <meta property="og:image" content="images/banner.png" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b6f47'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='white' text-anchor='middle'%3Em%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@400;700;800&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 본문 바로가기 -->
+    <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+    <!-- 이벤트 배너 -->
+    <a class="event-banner" href="javascript:void(0)">
+      마녀공장 신규회원 특별혜택, 지금 회원가입하러 가기!
+    </a>
+
+    <!-- 헤더 -->
+    <header id="header">
+      <div class="header-inner">
+        <!-- 햄버거 버튼 -->
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- 로고 -->
+        <a href="javascript:void(0)" class="logo">ma:nyo</a>
+
+        <!-- 네비게이션 -->
+        <nav class="nav-menu" id="navMenu">
+          <!-- 모바일 메뉴 로고 -->
+          <a href="javascript:void(0)" class="mobile-menu-logo">
+            <img src="images/마녀공장_폰트.png" alt="ma:nyo" />
+          </a>
+
+          <!-- SHOP (메가 드롭다운) -->
+          <div class="nav-item">
+            <a href="javascript:void(0)">SHOP</a>
+            <div class="dropdown">
+              <div class="dropdown-group">
+                <a href="javascript:void(0)" class="dropdown-title">ALL</a>
+                <ul class="dropdown-items">
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >전체보기</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >신제품</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown-group">
+                <a href="javascript:void(0)" class="dropdown-title">CATEGORY</a>
+                <ul class="dropdown-items">
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >스킨케어</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >클렌징</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >선케어</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >바디케어</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown-group">
+                <a href="javascript:void(0)" class="dropdown-title">LINE</a>
+                <ul class="dropdown-items">
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >갈락토미신</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >비피다</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >레티놀</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown-group">
+                <a href="javascript:void(0)" class="dropdown-title">CONCERN</a>
+                <ul class="dropdown-items">
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item">수분</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item">미백</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item">진정</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item">탄력</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROMOTION (드롭다운 없음) -->
+          <div class="nav-item">
+            <a href="javascript:void(0)">PROMOTION</a>
+          </div>
+
+          <!-- ABOUT -->
+          <div class="nav-item">
+            <a href="javascript:void(0)">ABOUT</a>
+            <div class="dropdown">
+              <div class="dropdown-group">
+                <a href="javascript:void(0)" class="dropdown-title">ABOUT</a>
+                <ul class="dropdown-items">
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >BRAND STORY</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMMUNITY -->
+          <div class="nav-item">
+            <a href="javascript:void(0)">COMMUNITY</a>
+            <div class="dropdown">
+              <div class="dropdown-group">
+                <a href="javascript:void(0)" class="dropdown-title"
+                  >COMMUNITY</a
+                >
+                <ul class="dropdown-items">
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >공지사항</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >1:1문의</a
+                    >
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" class="dropdown-item"
+                      >상품문의</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- 헤더 우측 아이콘 -->
+        <div class="header-icons">
+          <a href="javascript:void(0)" class="icon-btn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </a>
+          <a href="javascript:void(0)" class="icon-btn" aria-label="장바구니">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </a>
+          <a href="javascript:void(0)" class="icon-btn" aria-label="프로필">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- 메뉴 열렸을때 뒷배경 -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- 메인 비주얼 -->
+    <section class="main-visual">
+      <!-- 브랜드 슬로건 -->
+      <div class="slogan-group">
+        <img
+          src="images/마녀공장_폰트.png"
+          alt="브랜드 슬로건"
+          class="slogan-img"
+        />
+        <p class="slogan-desc">Everyday magic for you skin.</p>
+      </div>
+
+      <!-- 카테고리 서클 -->
+      <nav class="circle-categories">
+        <a href="javascript:void(0)" class="circle-item">
+          <div class="circle-img-wrap">
+            <img id="cat-all" src="images/menu_logo1.png" alt="ALL" />
+          </div>
+          <p class="circle-name">ALL</p>
+        </a>
+        <a href="javascript:void(0)" class="circle-item">
+          <div class="circle-img-wrap">
+            <img id="cat-event" src="images/menu_logo2.png" alt="EVENT" />
+          </div>
+          <p class="circle-name">EVENT</p>
+        </a>
+        <a href="javascript:void(0)" class="circle-item">
+          <div class="circle-img-wrap">
+            <img id="cat-best" src="images/menu_logo3.png" alt="BEST" />
+          </div>
+          <p class="circle-name">BEST</p>
+        </a>
+        <a href="javascript:void(0)" class="circle-item">
+          <div class="circle-img-wrap">
+            <img id="cat-new" src="images/menu_logo4.png" alt="NEW" />
+          </div>
+          <p class="circle-name">NEW</p>
+        </a>
+        <a href="javascript:void(0)" class="circle-item">
+          <div class="circle-img-wrap">
+            <img id="cat-sale" src="images/menu_logo5.png" alt="SALE" />
+          </div>
+          <p class="circle-name">SALE</p>
+        </a>
+      </nav>
+    </section>
+
+    <!-- 컨텐츠 영역 -->
+    <main id="main-content">
+      <section class="product-section fade-up">
+        <div class="inner">
+          <h1>Best Product</h1>
+
+          <div class="swiper product-swiper">
+            <div class="swiper-wrapper" id="productGrid">
+              <!--  products 배열에서 자동 생성 -->
+            </div>
+          </div>
+          <div class="swiper-progress-wrap">
+            <div class="swiper-progress-bar"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="recommended-section">
+        <div class="inner">
+          <div class="recommended-product-section">
+            <div class="recommended-product-header fade-left ">
+              <h2>Recommended<br />Products</h2>
+              <div class="filter-buttons">
+                <button data-category="md" class="active" aria-pressed="true">#MD추천</button>
+                <button data-category="promotion" aria-pressed="false">#프로모션 특가</button>
+                <button data-category="set" aria-pressed="false">#꿀조합SET</button>
+              </div>
+            </div>
+            <div class="recommended-product fade-right" id="recommendedGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="banner fade-up">
+        <img src="images/banner.png" alt="" />
+        <div class="banner-text">
+          <p class="banner-text-en">EVERYDAY MAGIC<br>FOR YOU SKIN</p>
+          <p class="banner-text-ko">당신의 피부를 위한 매일의 마법</p>
+          <button>바로가기</button>
+        </div>
+      </div>
+
+      <!-- 프로모션 섹션 -->
+      <!-- 아이템 추가할 땐 <li class="ad-item">...</li> 블록을 통째로 복붙하면 됩니다 -->
+      <section class="promotion-section fade-up">
+        <div class="inner">
+          <h2 class="promotion-header">Promotion</h2>
+
+          <ul class="ad-list">
+
+            <!-- 광고 아이템 1 — 이미지·제목·기간만 바꾸면 됩니다 -->
+            <li class="ad-item">
+              <a href="javascript:void(0)" class="ad-link">
+                <div class="ad-img-wrap">
+                  <img src="images/event3.png" alt="비피다 라인 할인 광고" />
+                </div>
+                <div class="ad-info">
+                  <p class="ad-title">비피다 라인 최대 40% 할인</p>
+                  <p class="ad-period">2026.06.01 ~ 2026.06.30</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 광고 아이템 2 -->
+            <li class="ad-item">
+              <a href="javascript:void(0)" class="ad-link">
+                <div class="ad-img-wrap">
+                  <img src="images/event12.png" alt="신규 회원 가입 혜택 광고" />
+                </div>
+                <div class="ad-info">
+                  <p class="ad-title">NEW글루타치온 세럼 등장! 세럼 신상 런칭 특가</p>
+                  <p class="ad-period">2026.06.15 ~ 2026.07.15</p>
+                </div>
+              </a>
+            </li>
+
+            <!-- 광고 아이템 3 -->
+            <li class="ad-item">
+              <a href="javascript:void(0)" class="ad-link">
+                <div class="ad-img-wrap">
+                  <img src="images/event5.png" alt="광고 이미지 3" />
+                </div>
+                <div class="ad-info">
+                  <p class="ad-title">앰플 세럼 더블특가 프로모션</p>
+                  <p class="ad-period">2026.06.18 ~ 2026.07.31</p>
+                </div>
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="inner">
+
+        <!-- 상단 링크 메뉴 -->
+        <ul class="footer-nav">
+          <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+          <li><a href="javascript:void(0)">이용약관</a></li>
+          <li><a href="javascript:void(0)">고객센터</a></li>
+          <li><a href="javascript:void(0)">자주묻는질문</a></li>
+          <li><a href="javascript:void(0)">채용사이트</a></li>
+        </ul>
+
+        <!-- 로고 + 기업 정보 -->
+        <div class="footer-body">
+          <p class="footer-logo">ma:nyo</p>
+
+          <div class="footer-info">
+            <p class="footer-company">(주)마녀공장 &nbsp;|&nbsp; CEO : 김기현, 송지혜</p>
+            <p>주소 : 서울특별시 강남구 테헤란로 124(역삼동) 삼원타워 4층</p>
+            <p>메일 : manyofactory_cs@manyo.co.kr &nbsp;|&nbsp; 고객센터 : 02-6013-0855 &nbsp;|&nbsp; 팩스 : 02-6280-0829</p>
+            <p>사업자등록번호 : 108-86-00365 &nbsp;<a href="javascript:void(0)">[사업자번호조회]</a> &nbsp;|&nbsp; 통신판매업신고번호 : 2025-서울강남-05730호</p>
+            <p>개인정보보호책임자 : 문수현</p>
+            <p class="footer-escrow">안전거래를 위해 (주)이니시스의 구매안전(에스크로)에 가입하여 서비스를 제공하였습니다. &nbsp;<a href="javascript:void(0)">[가입확인]</a></p>
+          </div>
+        </div>
+
+        <!-- 저작권 -->
+        <p class="footer-copyright">© 2025 MANYO FACTORY CO., LTD. ALL RIGHTS RESERVED.</p>
+
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
