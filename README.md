@@ -6,7 +6,7 @@
 
 ## 데모
 
-- 배포 링크: https://dohyeonl.github.io/manyo-redesign/
+- 배포 링크: <a href="https://dohyeonl.github.io/manyo-redesign/" target="_blank" rel="noopener noreferrer">https://dohyeonl.github.io/manyo-redesign/</a>
 
 ## 사용 기술
 
