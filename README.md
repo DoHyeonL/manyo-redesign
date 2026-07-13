@@ -28,11 +28,11 @@
 
 실제 서비스를 화면 단위로 사용해보며 느낀 불편함을 출발점으로 삼아, 각 지점에서 무엇이 문제였고 이를 어떻게 다르게 설계했는지 정리했습니다.
 
-### 1. 진입 화면 — 방해 요소 없이 브랜드에 집중
+### 1. 진입 화면 — 브랜드 정체성을 한눈에
 
-원본 사이트는 접속 직후 화면 절반을 가리는 회원가입 팝업이 나타나고, 히어로 이미지 위로는 "1초 회원가입" 배지가 겹쳐 표시되어 제품을 확인하기도 전에 여러 방해 요소를 먼저 마주하게 됩니다. 히어로 영역 또한 브랜드 소개와 상품 광고 슬라이드가 뒤섞여 자동으로 전환되는 캐러셀로 구성되어 있어, 방문할 때마다 첫 화면이 달라집니다. 배너를 하나씩 확인해본 결과 대부분 상품 상세 페이지(`goods_view.php`)로 연결되는 상품 광고였으며, 실제 이벤트는 아니었습니다.
+원본 사이트의 히어로 영역은 상품 이미지를 활용한 배너가 자동으로 전환되는 캐러셀로 구성되어 있습니다. 배너를 하나씩 확인해보니 전부 상품 상세 페이지로 연결되는 구조였는데, 정작 사진만 봐서는 이것이 프로모션·이벤트를 안내하는 배너인지 단순히 상품 구매를 유도하는 배너인지 구분이 되지 않았습니다.
 
-리디자인에서는 팝업과 겹침 배지를 배제하고, 고정된 브랜드 배너 하나만을 두어 방문 시점과 무관하게 동일한 첫인상을 전달하도록 구성했습니다.
+리디자인에서는 첫 화면에서 브랜드의 정체성을 명확하게 전달하는 데 초점을 맞춰, 고정된 브랜드 배너 하나만을 두어 방문 시점과 무관하게 일관된 브랜드 이미지를 전달하도록 구성했습니다.
 
 <table>
   <tr>
@@ -47,43 +47,35 @@
 
 ### 2. 상품 노출 방식 — Recommended Products 섹션 신설
 
-실제 진행 중인 이벤트·프로모션 정보는 EVENT 카테고리로 별도 진입해야만 확인할 수 있으며, 메인 화면에서는 노출되지 않습니다. 상품을 소개하는 영역도 "지금 가장 사랑받는 제품" 섹션 하나로 한정되어 있었습니다.
+원본 사이트는 상품을 소개하는 영역이 "지금 가장 사랑받는 제품" 섹션 하나로 한정되어 있었습니다.
 
-리디자인에서는 할인 상품과 세트 구성 상품을 필터로 구분해 볼 수 있는 Recommended Products 섹션을 메인 화면에 새로 구성하여, 별도 페이지로 이동하지 않아도 다양한 상품 정보를 확인할 수 있도록 했습니다.
+리디자인에서는 여기에 더해 할인 프로모션이 적용된 상품과 세트로 구성하면 좋은 상품까지 함께 보여주는 Recommended Products 섹션을 새로 구성했습니다. 상품 노출 영역을 넓혀 사용자가 둘러보는 상품의 폭을 넓히고, 이를 통해 매출 상승 효과까지 기대할 수 있도록 설계했습니다.
 
 <table>
   <tr>
-    <th align="center">Before (원본 — EVENT 별도 게시판)</th>
-    <th align="center">After (리디자인 — 메인 화면 노출)</th>
+    <th align="center">Before (원본 — Best Product 하나뿐)</th>
+    <th align="center">After (리디자인 — Recommended Products 추가)</th>
   </tr>
   <tr>
-    <td><img src="docs/compare/before_event.png" width="380"/></td>
+    <td><img src="docs/compare/before_bestproduct.png" width="380"/></td>
     <td><img src="docs/compare/after_recommend.png" width="380"/></td>
   </tr>
 </table>
 
-### 3. 카테고리 메뉴 — 키보드 접근성
+### 3. 이벤트·프로모션 노출 — 메인 화면에 상시 노출
 
-원본 사이트의 카테고리 메뉴는 마우스로 직접 호버하거나 클릭해야만 하위 항목(스킨케어, 클렌징 등)이 펼쳐지며, 키보드 Tab 이동만으로는 해당 항목에 포커스가 도달하지 않는 것을 확인했습니다.
+원본 사이트는 진행 중인 이벤트·프로모션을 확인하려면 EVENT 카테고리로 따로 진입해야 하며, 메인 화면에서는 전혀 노출되지 않습니다.
 
-리디자인에서는 CSS에 `focus-within` 규칙을 추가하여, 마우스 없이 Tab 키만으로도 동일하게 하위 카테고리를 확인할 수 있도록 개선했습니다.
-
-```css
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown {
-  opacity: 1;
-  pointer-events: auto;
-}
-```
+리디자인에서는 현재 진행 중인 이벤트와 프로모션을 메인 화면에 바로 노출시켜, 사용자가 별도 페이지로 이동하지 않아도 한눈에 확인할 수 있도록 구성했습니다. 이를 통해 프로모션에 대한 사용자의 클릭률 상승을 기대할 수 있습니다.
 
 <table>
   <tr>
-    <th align="center">Before (원본 — 마우스로만 펼쳐짐)</th>
-    <th align="center">After (리디자인 — Tab으로도 펼쳐짐)</th>
+    <th align="center">Before (원본 — EVENT 카테고리 진입 필요)</th>
+    <th align="center">After (리디자인 — 메인 화면 상시 노출)</th>
   </tr>
   <tr>
-    <td><img src="docs/compare/before_category.png" width="380"/></td>
-    <td><img src="docs/compare/after_category.png" width="380"/></td>
+    <td><img src="docs/compare/before_event.png" width="380"/></td>
+    <td><img src="docs/compare/after_promotion.png" width="380"/></td>
   </tr>
 </table>
 
