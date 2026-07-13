@@ -6,7 +6,7 @@
 
 ## 데모
 
-- 배포 링크: (추가 예정)
+- 배포 링크: https://dohyeonl.github.io/manyo-redesign/
 
 ## 사용 기술
 
@@ -63,5 +63,4 @@
 ## 앞으로 더 해보고 싶은 것
 
 - 이미지 용량 최적화 (webp 변환)
-- GitHub Pages로 실제 배포
 - 상품 상세 페이지 만들어보기
